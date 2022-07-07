@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@900&family=Comic+Neue&family=Open+Sans:wght@300;400;700&display=swap');:root{
+    --mainBgColor:#0d1117;
+    --secondBgColor:#222121c2;
+    --mainColor:#fff;
+    --discColor:#ddd;
+    --secondColor:linear-gradient(90deg, #4ca5ff 2.34%,#b673f8 100.78%);
+    --btnBgColor:#2190ff;
+    --radius:6px;
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Comic Neue', cursive;
+    font-family: 'Open Sans', sans-serif;
+}
+.app{
+    height:100vh;
+    color:white;
+    display:grid;
+    place-items:center;
+    background-color:var(--mainBgColor);
+}
+.app .header{
+    margin:15px 0;
+}
+.app .header .title{
+background:var(--secondColor);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color:transparent;
+text-align:center
+}
+.app .card{
+    min-width:350px;
+    max-width:400px;
+    background-color: var(--secondBgColor);
+    padding:30px;
+    border-radius:var(--radius);
+}
+.app .card  .card_content .inputs{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+.app .card  .card_content  .typing{
+   opacity:0;
+    position:absolute;
+    z-index:-1; 
+}
+.app .card  .card_content .inputs input{
+    height:35px;
+    width:45px;
+    border-radius:var(--radius);
+    color:aqua;
+    text-align:center;
+    text-transform:uppercase;
+    font-size: 20px;;
+}
+.app .card  .card_content .info{
+    margin:20px 0;
+}
+.app .card  .card_content .info p{
+font-size:15px;
+text-align:center;
+color:var(--discColor)
+}
+
+.app .card  .card_content .info p>.number_trails{
+    color:var(--btnBgColor);
+}
+.app .card  .card_content button{
+    width:100%;
+    text-align: center;
+    background-color:var(--btnBgColor) ;
+    color:white;
+    cursor:pointer;
+    padding:13px 0;
+    border-radius: var(--radius);
+    font-weight: bold;
+    position: relative;
+    z-index:1000
+}
+/* global styles */
+:where(input,button){
+  border-width:0;
+  outline-width:0;
+}
+
+.winner{
+    position:absolute;
+    inset:0
+}
+.winner.hidden{
+    display:none;
+}
+ .main-input{
+    background-color: green;
+}
+@keyframes second{
+    50%{
+        width:50%
+    }
+    100%{
+        width:100%
+    }
+    50%{
+        width:50%
+    }
+}
+.second-div{
+ animation : second  .5s ;
+}
